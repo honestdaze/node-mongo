@@ -23,12 +23,12 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
             assert.strictEqual(err, null);
             console.log('Insert Document:', result.ops);
 
-            collection.find().toArray((err, docs => {
+            collection.find().toArray((err, docs) => {
                 assert.strictEqual(err, null);
                 console.log('Found Documents:', docs);
 
                 client.close();
-            }))
+            })
         })
     })
 });
